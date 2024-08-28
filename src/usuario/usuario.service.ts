@@ -4,6 +4,7 @@ import { UpdateUsuarioDto } from './dto/update-usuario.dto';
 import { Repository } from 'typeorm';
 import { Usuario } from './entities/usuario.entity';
 import { InjectRepository } from '@nestjs/typeorm';
+import { hashSync as bcryptHashSync } from "bcrypt";
 
 @Injectable()
 export class UsuarioService {
@@ -14,6 +15,7 @@ export class UsuarioService {
 
   create(dto: CreateUsuarioDto) {
     const usuario = this.repository.create(dto);
+    usuario.password = bcryptHashSync(usuario.password, 10)
     return this.repository.save(usuario);
   }
 
@@ -21,12 +23,15 @@ export class UsuarioService {
     return this.repository.find();
   }
 
+  async findByUsername(username: string) {
+    return await this.repository.findOneBy({ username });
+  }
+
   findOne(id: string) {
     return this.repository.findOneBy({ id });
   }
 
   async update(id: string, dto: UpdateUsuarioDto) {
-    console.log('aaa')
     const usuario = await this.repository.findOneBy({ id });
     if (!usuario) return null;
     this.repository.merge(usuario, dto);

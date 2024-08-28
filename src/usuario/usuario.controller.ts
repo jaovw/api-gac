@@ -26,9 +26,7 @@ export class UsuarioController {
 
   @Patch(':id')
   async update(@Param('id') id: string, @Body() dto: UpdateUsuarioDto) {
-    console.log(id)
     const usuario = await this.usuarioService.update(id, dto);
-    console.log(usuario)
     if (!usuario) throw new NotFoundException();
     return usuario;
   }

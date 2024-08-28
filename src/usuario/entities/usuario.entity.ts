@@ -7,10 +7,13 @@ export class Usuario {
     id: string;
 
     @Column()
-    nome: string;
+    username: string;
 
     @Column()
     email: string;
+
+    @Column()
+    password: string;
 
     @BeforeInsert()
     gerarId() {

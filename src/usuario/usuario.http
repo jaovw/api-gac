@@ -9,12 +9,13 @@ POST http://localhost:3000/usuario
 Content-Type: application/json
 
 {
-    "nome": "Joao",
+    "username": "Joao",
+    "password": "12345",
     "email": "joao@joao.com"
 }
 
 ###
-PATCH  http://localhost:3000/usuario/id
+PATCH http://localhost:3000/usuario/id
 Content-Type: application/json
 
 {
@@ -23,4 +24,13 @@ Content-Type: application/json
 }
 
 ###
-DELETE   http://localhost:3000/usuario/id
+DELETE http://localhost:3000/usuario/id
+
+###
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+    "username": "Joao",
+    "password": "12345"
+}
