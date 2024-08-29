@@ -1,5 +1,4 @@
-import { Carteira } from "src/domain/carteira/entities/carteira.entity";
-import { BeforeInsert, Column, Entity,OneToOne, PrimaryColumn } from "typeorm";
+import { BeforeInsert, Column, Entity, PrimaryColumn } from "typeorm";
 const { nanoid } = require("nanoid")
 
 @Entity('usuario')
@@ -17,7 +16,4 @@ export class Usuario {
     gerarId() {
         this.id = nanoid();
     }
-
-    @OneToOne(() => Carteira, (carteira) => carteira.idUsuario)
-    carteira: Carteira;
 }

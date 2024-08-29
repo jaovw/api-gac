@@ -3,7 +3,7 @@ import { IsNotEmpty, IsNumber, IsString } from "class-validator";
 export class CreateCarteiraDto {
 
     @IsString()
-    idUsuario: string;
+    id_usuario: string;
 
     @IsNotEmpty()
     @IsNumber()

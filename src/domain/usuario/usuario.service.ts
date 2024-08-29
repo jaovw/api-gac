@@ -23,9 +23,8 @@ export class UsuarioService {
     usuario.password = bcryptHashSync(usuario.password, 10);
     const novo_usuario = await this.usuarioRepository.save(usuario);
 
-    // Cria carteira associada ao usuário
     const createCarteiraDto = new CreateCarteiraDto();
-    createCarteiraDto.idUsuario = novo_usuario.id;
+    createCarteiraDto.id_usuario = novo_usuario.id;
 
     const carteira = this.carteiraRepository.create(createCarteiraDto);
     await this.carteiraRepository.save(carteira);

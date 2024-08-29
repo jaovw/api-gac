@@ -12,7 +12,7 @@ POST http://localhost:3000/usuario
 Content-Type: application/json
 
 {
-    "username": "teste",
+    "username": "carlos",
     "password": "12345"
 }
 
@@ -34,3 +34,18 @@ Content-Type: application/json
 
 ###
 DELETE http://localhost:3000/usuario/7JKNHnON2UTTY6AyYuDn1
+
+###
+POST http://localhost:3000/transacao
+Authorization: Bearer __
+Content-Type: application/json
+
+{
+    "id_usuario_de": "",
+    "id_usuario_para": "",
+    "valor": 515
+}
+
+###
+POST http://localhost:3000/transacao/reverter/CkM-VNMrbPuBzY37n8jI6
+Authorization: Bearer __

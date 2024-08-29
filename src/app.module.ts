@@ -6,6 +6,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { AuthModule } from './auth/auth.module';
 import { ConfigModule } from '@nestjs/config';
 import { CarteiraModule } from './domain/carteira/carteira.module';
+import { TransacaoModule } from './domain/transacao/transacao.module';
 
 @Module({
   imports: [
@@ -20,7 +21,8 @@ import { CarteiraModule } from './domain/carteira/carteira.module';
     }),
     UsuarioModule,
     AuthModule,
-    CarteiraModule
+    CarteiraModule,
+    TransacaoModule
   ],
   controllers: [AppController],
   providers: [AppService],
