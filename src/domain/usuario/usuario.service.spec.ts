@@ -26,7 +26,7 @@ describe('UsuarioService', () => {
 
   describe('create', () => {
     it('should create and save a new user', async () => {
-      const dto: CreateUsuarioDto = { nome: 'joao', email: 'joao@joao.com' };
+      const dto: CreateUsuarioDto = { username: 'joao', password: '12345' };
       const usuario = { id: '1', ...dto };
 
       jest.spyOn(repository, 'create').mockReturnValue(usuario as Usuario);
