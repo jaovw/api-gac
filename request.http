@@ -1,0 +1,51 @@
+### LOGIN
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+    "username": "joao",
+    "password": "12345"
+}
+
+### USUARIO
+POST http://localhost:3000/usuario
+Content-Type: application/json
+
+{
+    "username": "carlos",
+    "password": "12345"
+}
+
+###
+GET http://localhost:3000/usuario
+Authorization: Bearer __
+
+###
+GET http://localhost:3000/usuario/z72p9CImguPA2sw-cMkgP
+
+###
+PATCH http://localhost:3000/usuario/id
+Content-Type: application/json
+
+{
+    "nome": "Joao editado",
+    "email": "joao@joao.com"
+}
+
+###
+DELETE http://localhost:3000/usuario/7JKNHnON2UTTY6AyYuDn1
+
+###
+POST http://localhost:3000/transacao
+Authorization: Bearer __
+Content-Type: application/json
+
+{
+    "id_usuario_de": "",
+    "id_usuario_para": "",
+    "valor": 515
+}
+
+###
+POST http://localhost:3000/transacao/reverter/CkM-VNMrbPuBzY37n8jI6
+Authorization: Bearer __

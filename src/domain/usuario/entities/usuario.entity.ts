@@ -1,4 +1,4 @@
-import { BeforeInsert, Column, Entity, PrimaryColumn, Unique } from "typeorm";
+import { BeforeInsert, Column, Entity, PrimaryColumn } from "typeorm";
 const { nanoid } = require("nanoid")
 
 @Entity('usuario')
@@ -8,9 +8,6 @@ export class Usuario {
 
     @Column()
     username: string;
-
-    @Column()
-    email: string;
 
     @Column()
     password: string;
